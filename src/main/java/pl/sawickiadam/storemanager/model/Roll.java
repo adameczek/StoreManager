@@ -39,7 +39,9 @@ public class Roll {
     public void setNumberOfRolls(int numberOfRolls) {
         this.numberOfRolls = numberOfRolls;
     }
-
+    public void increment(){
+        this.numberOfRolls++;
+    }
 
 
 }
