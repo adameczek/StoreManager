@@ -26,13 +26,13 @@ public class RollController {
         theModel.addAttribute("rolls", theRolls);
         return "rollList";
     }
-    @GetMapping("saveRoll")
+    @GetMapping("/saveRoll")
     public String saveRoll(Model model) {
         Roll theRoll = new Roll();
         model.addAttribute("roll", theRoll);
         return "rollForm";
     }
-    @PostMapping("saveRoll")
+    @PostMapping("/saveRoll")
     public String saveRoll(@ModelAttribute("roll") Roll theRoll, BindingResult bindingResult) {
         rollValidator.validate(theRoll, bindingResult);
         if (bindingResult.hasErrors()) {
@@ -45,6 +45,6 @@ public class RollController {
     public String updateUser(@RequestParam("userId") long theId, Model theModel) throws ResourceNotFoundException {
         Roll theRoll = rollService.getRollById(theId);
         theModel.addAttribute("user", theRoll);
-        return "user-form";
+        return "rollForm";
     }
 }
