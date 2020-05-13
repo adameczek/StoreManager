@@ -42,9 +42,16 @@ public class RollController {
         return "redirect:/all";
     }
     @GetMapping("/updateForm")
-    public String updateUser(@RequestParam("userId") long theId, Model theModel) throws ResourceNotFoundException {
+    public String updateUser(@RequestParam("rollId") long theId, Model theModel) throws ResourceNotFoundException {
         Roll theRoll = rollService.getRollById(theId);
-        theModel.addAttribute("user", theRoll);
+        theModel.addAttribute("roll", theRoll);
         return "rollForm";
+    }
+    @GetMapping("/takeRoll")
+    public String takeRoll(@RequestParam("rollId") long theId) throws ResourceNotFoundException {
+        Roll theRoll = rollService.getRollById(theId);
+        theRoll.decrement();
+        rollService.saveRoll(theRoll);
+        return "redirect:/all";
     }
 }

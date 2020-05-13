@@ -19,7 +19,7 @@
 <div>
     <div>
         <h1>Roll Form</h1>
-        <form:form method="post" modelAttribute="roll">
+        <form:form method="POST" modelAttribute="roll" action="saveRoll">
 
             <form:hidden path="id"></form:hidden>
             <form:input path="name" type="text"></form:input>

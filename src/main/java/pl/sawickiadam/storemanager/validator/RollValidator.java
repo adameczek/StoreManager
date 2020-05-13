@@ -22,8 +22,8 @@ public class RollValidator implements Validator {
     public void validate(Object o, Errors errors) {
         Roll roll = (Roll) o;
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "field.required");
-        if (rollService.findByNameAndColorNumber(roll.getName(), roll.getColorNumber()) != null) {
-            errors.rejectValue("name", "Duplicate.rollForm.name");
-        }
+//        if (rollService.findByNameAndColorNumber(roll.getName(), roll.getColorNumber()) != null) {
+//            errors.rejectValue("name", "Duplicate.rollForm.name");
+//        }
     }
 }

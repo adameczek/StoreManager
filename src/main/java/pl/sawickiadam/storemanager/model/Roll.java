@@ -19,7 +19,12 @@ public class Roll {
     public Roll() {
 
     }
-
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
@@ -39,8 +44,10 @@ public class Roll {
     public void setNumberOfRolls(int numberOfRolls) {
         this.numberOfRolls = numberOfRolls;
     }
-    public void increment(){
-        this.numberOfRolls++;
+    public void decrement(){
+        if (numberOfRolls > 0) {
+            this.numberOfRolls--;
+        }
     }
 
 
